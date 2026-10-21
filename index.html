@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Das | B.Tech CSE | KIIT</title>
+    <title>Shubham Das | MBA, XIM Bhubaneswar</title>
+    <meta name="description" content="Shubham Das — MBA (BM) at XIM Bhubaneswar, B.Tech CSE from KIIT, co-founder of XparkAI. Product strategy, data and building.">
+    <meta property="og:title" content="Shubham Das | MBA, XIM Bhubaneswar">
+    <meta property="og:description" content="Engineer turned MBA. Co-founder of XparkAI. Product strategy, data and building.">
+    <meta property="og:image" content="https://shubhamdas.site/assets/headshot.webp">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -377,6 +381,58 @@
         .app-anaconda { background-color: #F8F9FA; padding: 16px; }
 
 
+        /* --- v6 additions (same design language) --- */
+        .headshot-ring {
+            width: 168px; height: 168px; border-radius: 9999px; padding: 3px;
+            background: linear-gradient(135deg, #ec4899, #a855f7, #0071e3);
+            box-shadow: 0 20px 60px rgba(168, 85, 247, 0.25);
+            animation: slideInUp 0.8s ease-out backwards;
+        }
+        .headshot-img {
+            width: 100%; height: 100%; border-radius: 9999px; object-fit: cover;
+            object-position: 50% 20%; background: #fff; border: 3px solid #000;
+        }
+        .hero-meta {
+            font-size: 0.95rem; letter-spacing: 0.04em; color: var(--text-secondary-dark);
+            text-transform: uppercase; font-weight: 500;
+            animation: slideInUp 0.8s ease-out 0.3s backwards;
+        }
+        .tech-pill-light {
+            background-color: rgba(0, 0, 0, 0.05); color: var(--text-secondary-light);
+            font-size: 0.75rem; font-weight: 500; padding: 0.25rem 0.75rem; border-radius: 9999px;
+        }
+        .bullet-dot {
+            flex-shrink: 0; width: 6px; height: 6px; margin-top: 0.6em; border-radius: 9999px;
+            background: linear-gradient(135deg, #ec4899, #a855f7);
+        }
+        .stat-tile-dark {
+            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem; padding: 1.25rem 1.5rem;
+        }
+        .verify-link { font-size: 0.875rem; font-weight: 600; color: var(--apple-blue); }
+        .verify-link:hover { color: var(--apple-blue-hover); }
+        .photo-masonry { columns: 1; column-gap: 1rem; }
+        @media (min-width: 640px) { .photo-masonry { columns: 2; } }
+        @media (min-width: 1024px) { .photo-masonry { columns: 3; } }
+        .photo-masonry figure {
+            break-inside: avoid; margin-bottom: 1rem; border-radius: 1.25rem; overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .photo-masonry img {
+            width: 100%; height: auto; display: block; transition: transform 0.6s ease;
+        }
+        .photo-masonry figure:hover img { transform: scale(1.03); }
+        @media (max-width: 640px) {
+            .pro-heading { font-size: 3rem; }
+            .hero-sub { font-size: 1.25rem; }
+            .section-heading { font-size: 2.5rem; }
+            .headshot-ring { width: 136px; height: 136px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .fade-in-on-scroll { opacity: 1; transform: none; }
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #000; }
@@ -389,57 +445,63 @@
     <!-- Section 0: Header -->
     <header id="header" class="sticky top-0 z-50 w-full glass-nav">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo/Title -->
-            <a href="#home" class="text-xl font-light text-white"> <!-- --- FIX: font-semibold to font-light --- -->
-                Shubham's Portfolio
-            </a>
-            
-            <!-- Navigation Links -->
-            <div class="hidden md:flex items-center space-x-8">
+            <a href="#home" class="text-xl font-light text-white">Shubham Das</a>
+
+            <div class="hidden lg:flex items-center space-x-7">
                 <a href="#home" class="nav-link active" data-section="home">Home</a>
                 <a href="#xparkai" class="nav-link" data-section="xparkai">XparkAI</a>
                 <a href="#experience" class="nav-link" data-section="experience">Experience</a>
                 <a href="#projects" class="nav-link" data-section="projects">Projects</a>
                 <a href="#academics" class="nav-link" data-section="academics">Academics</a>
+                <a href="#leadership" class="nav-link" data-section="leadership">Leadership</a>
+                <a href="#photography" class="nav-link" data-section="photography">Photography</a>
                 <a href="#contact" class="nav-link" data-section="contact">Contact</a>
             </div>
-            
-            <!-- Mobile Menu Button -->
-            <button id="menuButton" class="md:hidden text-slate-100 focus:outline-none">
+
+            <button id="menuButton" class="lg:hidden text-slate-100 focus:outline-none" aria-label="Open menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
 
-        <!-- Mobile Menu (Dark) -->
-        <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 space-y-2 border-t border-slate-800">
+        <div id="mobileMenu" class="hidden lg:hidden px-6 pb-4 space-y-2 border-t border-slate-800">
             <a href="#home" class="nav-link block active" data-section="home-mobile">Home</a>
             <a href="#xparkai" class="nav-link block" data-section="xparkai-mobile">XparkAI</a>
             <a href="#experience" class="nav-link block" data-section="experience-mobile">Experience</a>
             <a href="#projects" class="nav-link block" data-section="projects-mobile">Projects</a>
             <a href="#academics" class="nav-link block" data-section="academics-mobile">Academics</a>
+            <a href="#leadership" class="nav-link block" data-section="leadership-mobile">Leadership</a>
+            <a href="#photography" class="nav-link block" data-section="photography-mobile">Photography</a>
             <a href="#contact" class="nav-link block" data-section="contact-mobile">Contact</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="w-full">
+    <main class="w-full overflow-x-hidden">
 
         <!-- Section 1: Hero -->
-        <section id="home" class="section-dark relative h-screen flex items-center justify-center text-center -mx-6">
+        <section id="home" class="section-dark relative min-h-screen flex items-center justify-center text-center py-24">
             <canvas id="hero-canvas"></canvas>
             <div class="hero-content max-w-4xl px-6">
-                <h1 class="pro-heading mb-6">
-                    Shubham Das
-                </h1>
-                <h2 class="hero-sub mb-8">
-                    Builder, developer, and aspiring tech entrepreneur from KIIT.
-                </h2>
-                <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 hero-sub" style="animation-delay: 0.5s;">
-                    Final-year B.Tech CSE student with a passion for building user-focused products — from ML models to full-stack healthcare logistics apps. I thrive on turning ideas into real, impactful solutions.
+                <div class="headshot-ring mx-auto mb-8">
+                    <img src="assets/headshot.webp" alt="Shubham Das" width="640" height="736" class="headshot-img">
+                </div>
+                <h1 class="pro-heading mb-5">Shubham Das</h1>
+                <p class="hero-meta mb-6">
+                    MBA (BM) · XIM Bhubaneswar · 2026–28
+                    <span class="hidden sm:inline">&nbsp;·&nbsp;</span><br class="sm:hidden">
+                    B.Tech (Hons.) CSE · KIIT · 9.59 CGPA
                 </p>
-                <a href="#xparkai" class="hero-btn btn btn-primary text-lg">
-                    See my flagship project
-                </a>
+                <!-- POSITIONING PLACEHOLDER: hero tagline — finalise once positioning is decided -->
+                <h2 class="hero-sub mb-6">
+                    Engineer turned MBA — I build products, and now I'm learning how they reach customers and create value.
+                </h2>
+                <!-- POSITIONING PLACEHOLDER: hero intro -->
+                <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 hero-sub" style="animation-delay: 0.5s;">
+                    Co-founder of XparkAI, a hyperlocal healthcare logistics platform. I bring a builder's understanding of technology to product strategy, customer discovery and go-to-market.
+                </p>
+                <div class="hero-btn flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#xparkai" class="btn btn-primary text-lg">See my flagship product</a>
+                    <a href="#projects" class="btn btn-secondary-dark text-lg">Product case study</a>
+                </div>
             </div>
         </section>
 
@@ -447,56 +509,56 @@
         <section id="xparkai" class="section-light py-24">
             <div class="container mx-auto px-6">
                 <div class="fade-in-on-scroll text-center max-w-3xl mx-auto">
-                    <span class="section-subheading gradient-heading">Flagship Project</span>
-                    <h2 class="section-heading-light mt-4 mb-6">XparkAI</h2>
+                    <span class="section-subheading gradient-heading">Flagship Product · Co-founder</span>
+                    <h2 class="section-heading section-heading-light mt-4 mb-6">XparkAI</h2>
                     <p class="text-lg text-slate-600 mb-16">
-                        A hyperlocal healthcare logistics platform built to solve critical gaps in medical supply availability — connecting patients and pharmacies through real-time, AI-powered coordination.
+                        A hyperlocal healthcare logistics platform for Tier-2 cities — connecting patients with nearby pharmacies, blood units and hospital beds in real time, starting in Bhubaneswar.
                     </p>
                 </div>
 
-                <!-- Main XparkAI Card -->
-                <div class="liquid-glass-light fade-in-on-scroll p-8 md:p-10 mb-8">
-                    <div class="flex flex-col md:flex-row md:items-start gap-8">
-                        <div class="flex-1">
-                            <span class="text-sm font-semibold text-slate-500">ACTIVE PROJECT · HEALTHCARE LOGISTICS</span>
-                            <h3 class="text-2xl font-semibold text-black my-3">XparkAI — Hyperlocal Medical Logistics Platform</h3>
-                            <p class="text-slate-700 mb-6">
-                                XparkAI is a dual-app Android platform (patient-facing + pharmacy partner) that leverages geofencing, Haversine-based proximity bidding, and a three-layer AI assistant powered by Gemini 2.5 Flash to connect patients with nearby pharmacies and healthcare resources in real time. Built on a hybrid Firebase Firestore + Supabase PostgreSQL architecture, XparkAI ensures fast, reliable data across the logistics chain — from medicine availability to emergency blood unit location and hospital bed tracking.
-                            </p>
-                            <p class="text-slate-700 mb-6">
-                                The platform operates within a 3.0 km geofence radius with a 10-minute broadcast window, ensuring hyper-relevant, low-latency matches. Co-developed as a six-member team at KIIT, under the guidance of Dr. Mainak Biswas, with a research paper targeting IEEE Access.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full">Flutter</span>
-                                <span class="inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full">Firebase</span>
-                                <span class="inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full">Supabase</span>
-                                <span class="inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full">Gemini 2.5 Flash</span>
-                                <span class="inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full">Geofencing</span>
-                                <span class="inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full">PostgreSQL</span>
-                                <span class="inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full">Android</span>
-                            </div>
-                            <div class="flex flex-wrap gap-4">
-                                <a href="https://xparkai.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                    Visit xparkai.in &rarr;
-                                </a>
-                            </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div class="liquid-glass-light fade-in-on-scroll p-8 md:p-10">
+                        <span class="text-sm font-semibold text-slate-500">THE PRODUCT</span>
+                        <h3 class="text-2xl font-semibold text-black my-3">What I owned</h3>
+                        <ul class="space-y-4 text-slate-700">
+                            <li class="flex gap-3"><span class="bullet-dot"></span><span><strong class="text-black font-semibold">Product strategy.</strong> Co-led the strategy for a scalable Tier-2 healthcare ecosystem — specifying and prioritising features across a patient app and a pharmacy-partner app.</span></li>
+                            <li class="flex gap-3"><span class="bullet-dot"></span><span><strong class="text-black font-semibold">Core mechanic.</strong> A prescription is broadcast to pharmacies within a 3 km geofence for 10 minutes, and nearby partners bid to fulfil it — turning a phone-around search into a single request.</span></li>
+                            <li class="flex gap-3"><span class="bullet-dot"></span><span><strong class="text-black font-semibold">Trust by design.</strong> Chose a hybrid architecture that keeps user data separate from location data, with compliance guardrails around the AI assistant to manage risk.</span></li>
+                            <li class="flex gap-3"><span class="bullet-dot"></span><span><strong class="text-black font-semibold">Business case.</strong> Built the pitch ecosystem — deck, Business Model Canvas, financials and pitch script.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="liquid-glass-light fade-in-on-scroll p-8 md:p-10" style="transition-delay: 0.15s;">
+                        <span class="text-sm font-semibold text-slate-500">UNDER THE HOOD</span>
+                        <h3 class="text-2xl font-semibold text-black my-3">How it's built</h3>
+                        <p class="text-slate-700 mb-6">
+                            A dual-app Flutter platform on a hybrid Firebase Firestore + Supabase PostgreSQL backend, with Haversine-based proximity matching and a three-layer AI assistant powered by Gemini 2.5 Flash. Built as a six-member team at KIIT under the guidance of Dr. Mainak Biswas, with an accompanying research paper for IEEE Access.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="tech-pill-light">Flutter</span>
+                            <span class="tech-pill-light">Firebase</span>
+                            <span class="tech-pill-light">Supabase</span>
+                            <span class="tech-pill-light">PostgreSQL</span>
+                            <span class="tech-pill-light">Gemini 2.5 Flash</span>
+                            <span class="tech-pill-light">Geofencing</span>
+                            <span class="tech-pill-light">Android</span>
                         </div>
+                        <a href="https://xparkai.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit xparkai.in &rarr;</a>
                     </div>
                 </div>
 
-                <!-- XparkAI Stats -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 fade-in-on-scroll">
                     <div class="liquid-glass-light p-6 text-center">
                         <h3 class="text-4xl md:text-5xl font-semibold" style="color: #ec4899;">3.0 km</h3>
-                        <p class="text-sm text-slate-600">Geofence Radius</p>
+                        <p class="text-sm text-slate-600">Geofence radius</p>
                     </div>
-                    <div class="liquid-glass-light p-6 text-center" style="animation-delay: 0.1s;">
+                    <div class="liquid-glass-light p-6 text-center">
                         <h3 class="text-4xl md:text-5xl font-semibold" style="color: #a855f7;">10 min</h3>
-                        <p class="text-sm text-slate-600">Broadcast Window</p>
+                        <p class="text-sm text-slate-600">Prescription broadcast window</p>
                     </div>
-                    <div class="liquid-glass-light p-6 text-center" style="animation-delay: 0.2s;">
-                        <h3 class="text-4xl md:text-5xl font-semibold" style="color: #6366f1;">3-Layer</h3>
-                        <p class="text-sm text-slate-600">Gemini AI Assistant</p>
+                    <div class="liquid-glass-light p-6 text-center">
+                        <h3 class="text-4xl md:text-5xl font-semibold" style="color: #6366f1;">2 apps</h3>
+                        <p class="text-sm text-slate-600">Patient + pharmacy partner</p>
                     </div>
                 </div>
             </div>
@@ -505,139 +567,147 @@
         <!-- Section 3: Experience (Dark) -->
         <section id="experience" class="section-dark py-24">
             <div class="container mx-auto px-6">
+                <div class="fade-in-on-scroll text-center max-w-3xl mx-auto">
+                    <span class="section-subheading gradient-heading">Experience</span>
+                    <h2 class="section-heading section-heading-dark mt-4 mb-16">Industry Training</h2>
+                </div>
+                <div class="liquid-glass-dark fade-in-on-scroll">
+                    <div class="p-6 sm:p-10">
+                        <div class="flex flex-wrap border-b border-gray-700">
+                            <button class="tab-button-dark active" data-tab="tab-1">Intel Unnati</button>
+                            <button class="tab-button-dark" data-tab="tab-2">AWS Academy</button>
+                            <button class="tab-button-dark" data-tab="tab-3">BSNL</button>
+                        </div>
 
-                <!-- Professional Experience -->
-<div class="liquid-glass-dark fade-in-on-scroll">
-    <div class="p-6 sm:p-10">
-        <h2 class="section-heading-dark text-center mb-10">Professional Experience</h2>
+                        <div class="py-8 px-2 sm:px-4 min-h-[200px]">
+                            <div id="tab-1" class="tab-content active">
+                                <h3 class="text-2xl font-semibold text-white mb-2">Student Trainee</h3>
+                                <p class="text-lg text-slate-300 mb-1">Intel Corporation · Unnati Industrial Training Program 2024</p>
+                                <p class="text-sm text-slate-500 mb-5">May 2024 – July 2024</p>
+                                <ul class="space-y-3 text-slate-300 leading-relaxed">
+                                    <li class="flex gap-3"><span class="bullet-dot"></span><span>Selected on CGPA for Intel's Unnati programme to solve a structured-dataset analytics problem in Knowledge Representation and Insights Generation.</span></li>
+                                    <li class="flex gap-3"><span class="bullet-dot"></span><span>Cleaned and structured a large-scale demographic dataset (Adult Income), resolving data-quality issues so the analysis could be trusted.</span></li>
+                                    <li class="flex gap-3"><span class="bullet-dot"></span><span>Evaluated multiple ML models for income classification, reaching <strong class="text-white">83% predictive accuracy</strong> with the selected pipeline.</span></li>
+                                </ul>
+                            </div>
 
-        <!-- Tab Buttons -->
-        <div class="flex flex-wrap border-b border-gray-700">
-            <button class="tab-button-dark active" data-tab="tab-1">Intel UNNATI Intern</button>
-            <button class="tab-button-dark" data-tab="tab-2">AWS Academy Trainee</button>
-        </div>
+                            <div id="tab-2" class="tab-content">
+                                <h3 class="text-2xl font-semibold text-white mb-2">AWS Academy Graduate</h3>
+                                <p class="text-lg text-slate-300 mb-1">Amazon Web Services · Cloud Foundations + Cloud Architecting</p>
+                                <p class="text-sm text-slate-500 mb-5">October 2024 – December 2024</p>
+                                <p class="text-slate-300 leading-relaxed">
+                                    80 hours across AWS core services, security, pricing and scalable, secure architecture design — the grounding behind the infrastructure decisions on XparkAI.
+                                </p>
+                            </div>
 
-        <!-- Tab Content -->
-        <div class="py-8 px-2 sm:px-4 min-h-[200px]">
-            <!-- Tab 1: Intel UNNATI -->
-            <div id="tab-1" class="tab-content active">
-                <h3 class="text-2xl font-semibold text-white mb-2">Student Intern</h3>
-                <p class="text-lg text-slate-300 mb-1">Intel UNNATI Program 2024</p>
-                <p class="text-sm text-slate-500 mb-4">May 2024 – July 2024</p>
-                <p class="text-slate-300 text-base leading-relaxed">
-                    Worked on insight generation and analysis using the Adult Income dataset. Gained hands-on experience with data preprocessing, visualization, and machine learning models. Collaborated on early-stage prototypes in Jupyter Notebook, using Seaborn and Matplotlib to analyze demographic trends and dataset correlations — providing insights for ML model optimization. This was my introduction to NLP and ML, sparking a deep interest in data-driven problem-solving.
-                </p>
-            </div>
-
-            <!-- Tab 2: AWS Academy -->
-            <div id="tab-2" class="tab-content">
-                <h3 class="text-2xl font-semibold text-white mb-2">Remote Trainee</h3>
-                <p class="text-lg text-slate-300 mb-1">AWS Academy Program 2024</p>
-                <p class="text-sm text-slate-500 mb-4">October 2024 – December 2024</p>
-                <p class="text-slate-300 text-base leading-relaxed">
-                    Gained a comprehensive understanding of cloud computing concepts including AWS core services, security, architecture, pricing, and support models. Developed practical knowledge of deploying and managing scalable cloud infrastructure, which directly informed the architecture decisions made in building the XparkAI platform.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
+                            <div id="tab-3" class="tab-content">
+                                <h3 class="text-2xl font-semibold text-white mb-2">Vocational Trainee</h3>
+                                <p class="text-lg text-slate-300 mb-1">BSNL · Regional Telecom Training Centre, Bhubaneswar</p>
+                                <p class="text-sm text-slate-500 mb-5">July 2025 – August 2025</p>
+                                <p class="text-slate-300 leading-relaxed">Training in advanced telecom and IT.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="projects" class="section-dark py-24">
-            <div class="container mx-auto px-6">
-                <div class="fade-in-on-scroll text-center max-w-3xl mx-auto">
-                    <span class="section-subheading gradient-heading">My Work</span>
-                    <h2 class="section-heading-dark mt-4 mb-6">Curated Projects</h2>
-                    <p class="text-lg text-slate-400 mb-16">
-                        I believe in learning by building. Here are a few key projects where I've applied my research and technical skills to create tangible, high-impact solutions.
-                    </p>
-                </div>
 
         <!-- Section 4: Projects (Dark) -->
         <section id="projects" class="section-dark py-24">
             <div class="container mx-auto px-6">
                 <div class="fade-in-on-scroll text-center max-w-3xl mx-auto">
                     <span class="section-subheading gradient-heading">My Work</span>
-                    <h2 class="section-heading-dark mt-4 mb-6">Curated Projects</h2>
+                    <h2 class="section-heading section-heading-dark mt-4 mb-6">Projects</h2>
                     <p class="text-lg text-slate-400 mb-16">
-                        I believe in learning by building. Here are the projects where I've applied my technical skills to create real, measurable outcomes.
+                        From product strategy to working hardware — the problems I've worked on, and what I did about them.
                     </p>
                 </div>
 
-                <!-- 2x2 Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Project 1: ASD Detection -->
+                <!-- Featured: STC Mobile case study -->
+                <div class="liquid-glass-dark fade-in-on-scroll mb-8" style="border-color: rgba(168, 85, 247, 0.45);">
+                    <div class="p-8 md:p-10 grid grid-cols-1 lg:grid-cols-5 gap-10">
+                        <div class="lg:col-span-3">
+                            <span class="text-xs font-semibold text-purple-400">★ PRODUCT MANAGEMENT LIVE PROJECT · PHOENIX GLOBAL · JUN–JUL 2026</span>
+                            <h3 class="text-2xl md:text-3xl font-semibold text-white mt-3 mb-2">STC Mobile — The Sovereign Digital Ecosystem</h3>
+                            <p class="text-slate-400 mb-6">A product-market-fit strategy for an STC-branded smartphone in Saudi Arabia.</p>
+                            <p class="text-slate-300 mb-6">
+                                Rather than competing on hardware specs, I positioned the device as Saudi Arabia's digital-identity phone — integrated by default with mystc and stc pay so communications, payments and entertainment live in one place. The framework covers product purpose, customer needs, feature prioritisation, competitive positioning and performance metrics.
+                            </p>
+                            <ul class="space-y-3 text-slate-300 mb-6">
+                                <li class="flex gap-3"><span class="bullet-dot"></span><span><strong class="text-white">Customer needs:</strong> functional and emotional jobs-to-be-done, mapped to everyday usage situations — payments, streaming, gaming, work, family plans.</span></li>
+                                <li class="flex gap-3"><span class="bullet-dot"></span><span><strong class="text-white">Prioritisation:</strong> must / should / could-have features, led by deep ecosystem integration, a 5G optimisation profile and native BNPL financing.</span></li>
+                                <li class="flex gap-3"><span class="bullet-dot"></span><span><strong class="text-white">The moat:</strong> structural integration with STC's network and financial rails, which generic handsets can't replicate.</span></li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill-dark">Product-Market Fit</span>
+                                <span class="tech-pill-dark">Jobs-to-be-Done</span>
+                                <span class="tech-pill-dark">MoSCoW Prioritisation</span>
+                                <span class="tech-pill-dark">Roadmapping</span>
+                                <span class="tech-pill-dark">Competitive Positioning</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4 content-center">
+                            <div class="stat-tile-dark">
+                                <div class="text-4xl font-semibold" style="color: #ec4899;">30M+</div>
+                                <div class="text-sm text-slate-400 mt-1">STC subscribers as the launch base</div>
+                            </div>
+                            <div class="stat-tile-dark">
+                                <div class="text-4xl font-semibold" style="color: #a855f7;">63%</div>
+                                <div class="text-sm text-slate-400 mt-1">of the population under 35</div>
+                            </div>
+                            <div class="stat-tile-dark">
+                                <div class="text-4xl font-semibold" style="color: #6366f1;">42%</div>
+                                <div class="text-sm text-slate-400 mt-1">of Saudi consumers already use BNPL</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- EchoSync -->
                     <div class="liquid-glass-dark fade-in-on-scroll">
                         <div class="p-8 flex flex-col h-full">
+                            <span class="text-xs font-semibold text-slate-500 mb-2">KIIT · TEAM OF SIX · APR 2025</span>
+                            <h3 class="text-2xl font-semibold text-white mb-3">EchoSync — Assistive Device for Alzheimer's</h3>
+                            <p class="text-slate-300 mb-6 flex-grow">A wearable that listens to everyday conversation, picks out the tasks a patient needs to remember and turns them into reminders on a companion app. On-device speech-to-text (Vosk on an ESP32) keeps latency low; Llama 3.3 on Groq extracts the tasks. Built under the guidance of Dr. Vishal Meena.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="tech-pill-dark">ESP32</span>
+                                <span class="tech-pill-dark">Vosk STT</span>
+                                <span class="tech-pill-dark">Llama 3.3</span>
+                                <span class="tech-pill-dark">Groq</span>
+                                <span class="tech-pill-dark">IoT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ASD Detection -->
+                    <div class="liquid-glass-dark fade-in-on-scroll" style="transition-delay: 0.15s;">
+                        <div class="p-8 flex flex-col h-full">
+                            <span class="text-xs font-semibold text-slate-500 mb-2">MACHINE LEARNING</span>
                             <h3 class="text-2xl font-semibold text-white mb-3">Autism Spectrum Disorder Detection</h3>
-                            <p class="text-slate-300 mb-6 flex-grow">A machine learning model for autism disorder detection that benchmarks multiple algorithms and selects the best-performing one, incorporating fine-tuned parameters and feature scaling to achieve superior accuracy on the dataset.</p>
-                            <!-- Tech Pills -->
+                            <p class="text-slate-300 mb-6 flex-grow">A screening model that benchmarks multiple algorithms and selects the best performer, with tuned parameters and feature scaling for higher accuracy.</p>
                             <div class="flex flex-wrap gap-2 mb-6">
                                 <span class="tech-pill-dark">Python</span>
                                 <span class="tech-pill-dark">scikit-learn</span>
-                                <span class="tech-pill-dark">Feature Scaling</span>
-                                <span class="tech-pill-dark">ML Benchmarking</span>
+                                <span class="tech-pill-dark">Model Benchmarking</span>
                             </div>
-                            <div class="flex gap-4 mt-auto">
+                            <div class="mt-auto">
                                 <a href="https://github.com/SENSEi-777/ASD_detection_system" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-dark">GitHub</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2: EchoSync -->
-                    <div class="liquid-glass-dark fade-in-on-scroll" style="transition-delay: 0.15s;">
-                        <div class="p-8 flex flex-col h-full">
-                            <h3 class="text-2xl font-semibold text-white mb-3">EchoSync — Assistive Device for Alzheimer's</h3>
-                            <p class="text-slate-300 mb-6 flex-grow">Co-developed an assistive wearable device integrating an ESP32 module and Vosk for on-device speech-to-text conversion. Uses Llama 3.3 (hosted on Groq LPU) to extract key tasks from speech and schedules them inside a companion mobile app — designed specifically for Alzheimer's patients.</p>
-                            <!-- Tech Pills -->
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="tech-pill-dark">ESP32</span>
-                                <span class="tech-pill-dark">Vosk STT</span>
-                                <span class="tech-pill-dark">Llama 3.3</span>
-                                <span class="tech-pill-dark">Groq LPU</span>
-                                <span class="tech-pill-dark">IoT</span>
-                            </div>
-                            <div class="flex gap-4 mt-auto">
-                                <a href="https://github.com/SENSEi-777/InfraGuardFinal" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-dark">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: Adult Income Analysis -->
+                    <!-- Adult Income -->
                     <div class="liquid-glass-dark fade-in-on-scroll" style="transition-delay: 0.3s;">
                         <div class="p-8 flex flex-col h-full">
-                            <h3 class="text-2xl font-semibold text-white mb-3">Adult Income Dataset Analysis</h3>
-                            <p class="text-slate-300 mb-6 flex-grow">Built during the Intel UNNATI internship — developed early-stage Jupyter Notebook prototypes for data visualization and predictive modeling, using Seaborn and Matplotlib to analyze demographic trends, income correlations, and provide insights for ML model optimization.</p>
-                            <!-- Tech Pills -->
-                            <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold text-slate-500 mb-2">INTEL UNNATI · 2024</span>
+                            <h3 class="text-2xl font-semibold text-white mb-3">Adult Income Classification</h3>
+                            <p class="text-slate-300 mb-6 flex-grow">Data cleaning, exploratory analysis and model comparison on a large demographic dataset to predict income bands — reaching 83% accuracy with the selected model.</p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
                                 <span class="tech-pill-dark">Python</span>
-                                <span class="tech-pill-dark">Jupyter Notebook</span>
-                                <span class="tech-pill-dark">Seaborn</span>
-                                <span class="tech-pill-dark">Matplotlib</span>
                                 <span class="tech-pill-dark">Pandas</span>
-                            </div>
-                            <div class="flex gap-4 mt-auto">
-                                <span class="btn btn-disabled">Intel UNNATI Project</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: XparkAI (card version) -->
-                    <div class="liquid-glass-dark fade-in-on-scroll" style="transition-delay: 0.45s; border: 1px solid rgba(0, 113, 227, 0.4);">
-                        <div class="p-8 flex flex-col h-full">
-                            <span class="text-xs font-semibold text-blue-400 mb-2">★ FLAGSHIP PROJECT</span>
-                            <h3 class="text-2xl font-semibold text-white mb-3">XparkAI — Healthcare Logistics</h3>
-                            <p class="text-slate-300 mb-6 flex-grow">A hyperlocal medical logistics platform connecting patients with nearby pharmacies and healthcare resources using real-time geofencing and AI. Built as a dual Flutter app with Firebase + Supabase backend.</p>
-                            <!-- Tech Pills -->
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="tech-pill-dark">Flutter</span>
-                                <span class="tech-pill-dark">Firebase</span>
-                                <span class="tech-pill-dark">Supabase</span>
-                                <span class="tech-pill-dark">Gemini AI</span>
-                            </div>
-                            <div class="flex gap-4 mt-auto">
-                                <a href="https://xparkai.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit xparkai.in</a>
+                                <span class="tech-pill-dark">Seaborn</span>
+                                <span class="tech-pill-dark">Jupyter</span>
                             </div>
                         </div>
                     </div>
@@ -645,154 +715,225 @@
             </div>
         </section>
 
-        <!-- Section 5: Academics & Skills (Light) -->
+        <!-- Section 5: Academics, Toolkit & Credentials (Light) -->
         <section id="academics" class="section-light py-24">
             <div class="container mx-auto px-6">
-                <!-- Part 5.A: Academic Performance -->
+                <!-- 5.A Education -->
                 <div class="fade-in-on-scroll mb-24">
                     <div class="text-center max-w-3xl mx-auto">
-                        <span class="section-subheading gradient-heading">Data-Driven</span>
-                        <h2 class="section-heading-light mt-4 mb-6">Academic Performance</h2>
+                        <span class="section-subheading gradient-heading">Education</span>
+                        <h2 class="section-heading section-heading-light mt-4 mb-6">Academics</h2>
                         <p class="text-lg text-slate-600 mb-16">
-                            B.Tech CSE at KIIT University (2022–2026), maintaining strong academic performance across all six completed semesters. Consistent discipline and focus on applied technical learning.
+                            An engineering foundation at KIIT, now building the business side at XIM Bhubaneswar.
                         </p>
                     </div>
-                    <div class="liquid-glass-light p-4 sm:p-8 relative">
-                        <canvas id="sgpaChart" class="w-full h-80 md:h-96"></canvas>
-                        <!-- --- FIX: Changed top-8 right-8 to bottom-8 right-8 --- -->
-                        <div class="absolute bottom-8 right-8 bg-white/50 backdrop-blur-md p-4 rounded-lg text-right border border-black/10">
-                            <div class="text-sm text-slate-500">Overall CGPA</div>
-                            <div class="text-3xl font-bold text-black">9.56</div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="liquid-glass-light p-6 lg:col-span-1" style="border-color: rgba(168, 85, 247, 0.4);">
+                            <span class="text-xs font-semibold text-purple-500">CURRENT</span>
+                            <h3 class="text-xl font-semibold text-black mt-1 mb-1">MBA (Business Management)</h3>
+                            <p class="text-slate-600 mb-3">Xavier Institute of Management, Bhubaneswar</p>
+                            <span class="text-sm text-slate-400">Batch of 2026–28</span>
+                        </div>
+                        <div class="liquid-glass-light p-6">
+                            <h3 class="text-xl font-semibold text-black mb-1">B.Tech (Hons.) CSE</h3>
+                            <p class="text-slate-600 mb-3">Kalinga Institute of Industrial Technology</p>
+                            <span class="text-sm text-slate-400">CGPA 9.59 · 2022–2026</span>
+                        </div>
+                        <div class="liquid-glass-light p-6">
+                            <h3 class="text-xl font-semibold text-black mb-1">Class XII &amp; X (CBSE)</h3>
+                            <p class="text-slate-600 mb-3">ODM Public School · Mothers Public School</p>
+                            <span class="text-sm text-slate-400">88.4% (2021) · 93.4% (2019)</span>
+                        </div>
+                    </div>
+
+                    <div class="liquid-glass-light p-4 sm:p-8">
+                        <div class="flex flex-wrap items-end justify-between gap-4 mb-4 px-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-black">B.Tech semester performance</h3>
+                                <p class="text-sm text-slate-500">SGPA across all eight semesters</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-slate-500">Final CGPA</div>
+                                <div class="text-3xl font-bold text-black">9.59</div>
+                            </div>
+                        </div>
+                        <div class="relative h-72 md:h-96">
+                            <canvas id="sgpaChart" aria-label="SGPA by semester: 9.35, 9.67, 9.55, 9.78, 9.23, 9.75, 9.80, 9.60"></canvas>
                         </div>
                     </div>
                 </div>
 
-                <!-- Part 5.B: Tech Stack (NEW APP WALL) -->
+                <!-- 5.B Toolkit -->
                 <div class="fade-in-on-scroll mb-24">
                     <div class="text-center max-w-3xl mx-auto">
                         <span class="section-subheading gradient-heading">Toolkit</span>
-                        <h2 class="section-heading-light mt-4 mb-6">My Application Toolkit</h2>
+                        <h2 class="section-heading section-heading-light mt-4 mb-6">What I Work With</h2>
                         <p class="text-lg text-slate-600 mb-16">
-                            From data analysis in Jupyter to app development with Flutter and Firebase, I'm fluent in the complete modern development stack.
+                            Product thinking, backed by data and the ability to build.
                         </p>
                     </div>
-                    
-                    <!-- SOTA App Wall -->
-                    <div class="app-wall-container">
-                        <div class="app-wall-row animate-marquee-slow">
-                            <!-- Row 1 -->
-                            <div class="app-squircle app-vscode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.1 11.2l-6.3-6.3c-.4-.4-1-.4-1.4 0L12 8.3 8.6 4.9c-.4-.4-1-.4-1.4 0L.9 11.2c-.4.4-.4 1 0 1.4l6.3 6.3c.4.4 1 .4 1.4 0L12 15.4l3.4 3.4c.4.4 1 .4 1.4 0l6.3-6.3c.4-.4.4-1 0-1.4zM11.3 12L3.1 3.8l5.6 5.6L11.3 12zm.7.7l8.2 8.2-5.6-5.6L12 12.7z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-colab"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 15.6c-3.1 0-5.6-2.5-5.6-5.6s2.5-5.6 5.6-5.6 5.6 2.5 5.6 5.6-2.5 5.6-5.6 5.6z" fill="#FFF"/><path d="M12 8.4c-2 0-3.6 1.6-3.6 3.6s1.6 3.6 3.6 3.6 3.6-1.6 3.6-3.6-1.6-3.6-3.6-3.6z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-jupyter"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#F37626"/><circle cx="12" cy="12" r="5" fill="#FFF"/><circle cx="5.5" cy="6.5" r="1.5" fill="#FFF"/><circle cx="18.5" cy="6.5" r="1.5" fill="#FFF"/><circle cx="5.5" cy="17.5" r="1.5" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-anaconda"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#43B049"/></svg></div>
-                            <div class="app-squircle app-github"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.488.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.82c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.85-2.339 4.695-4.566 4.942.359.309.678.92.678 1.856 0 1.34-.012 2.419-.012 2.746 0 .267.18.577.688.48A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-excel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 13.2v-2.4l-3.3-1.2V7H4v10h14.7v-2.6l3.3-1.2zM17.3 14v2H5.3V8h12v2.1l-1.4.5V12h1.4v2zM12 10.3l1.8 1.7-1.8 1.7-1.8-1.7 1.8-1.7z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-pitch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-12h2v8h-2v-8zm0-3h2v2h-2v-2z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-overleaf"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.49 14.31c-.3.09-.61.13-.94.13-1.61 0-2.88-.93-3.21-2.22H7.5v4.13H5.3v-9.68h4.22c1.9 0 3.15 1.25 3.15 3.1 0 1.29-.68 2.29-1.68 2.76.7.23 1.2.78 1.48 1.5l.01.01h-2.1c-.22-.51-.59-.9-1.07-1.12zm-3.49-3.4c.3-.82 1.13-1.37 2.03-1.37.93 0 1.57.55 1.57 1.36 0 .86-.64 1.4-1.57 1.4-.9 0-1.73-.55-2.03-1.39zm8.17 3.4h-2.11v-5.55h2.11v5.55zm0-6.66h-2.11v-2.1h2.11v2.1z" fill="#FFF"/></svg></div>
-                            
-                            <!-- Duplicate Row 1 -->
-                            <div class="app-squircle app-vscode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.1 11.2l-6.3-6.3c-.4-.4-1-.4-1.4 0L12 8.3 8.6 4.9c-.4-.4-1-.4-1.4 0L.9 11.2c-.4.4-.4 1 0 1.4l6.3 6.3c.4.4 1 .4 1.4 0L12 15.4l3.4 3.4c.4.4 1 .4 1.4 0l6.3-6.3c.4-.4.4-1 0-1.4zM11.3 12L3.1 3.8l5.6 5.6L11.3 12zm.7.7l8.2 8.2-5.6-5.6L12 12.7z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-colab"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 15.6c-3.1 0-5.6-2.5-5.6-5.6s2.5-5.6 5.6-5.6 5.6 2.5 5.6 5.6-2.5 5.6-5.6 5.6z" fill="#FFF"/><path d="M12 8.4c-2 0-3.6 1.6-3.6 3.6s1.6 3.6 3.6 3.6 3.6-1.6 3.6-3.6-1.6-3.6-3.6-3.6z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-jupyter"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#F37626"/><circle cx="12" cy="12" r="5" fill="#FFF"/><circle cx="5.5" cy="6.5" r="1.5" fill="#FFF"/><circle cx="18.5" cy="6.5" r="1.5" fill="#FFF"/><circle cx="5.5" cy="17.5" r="1.5" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-anaconda"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#43B049"/></svg></div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="liquid-glass-light p-6">
+                            <h3 class="text-lg font-semibold text-black mb-4">Product &amp; Strategy</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill-light">Product Strategy</span>
+                                <span class="tech-pill-light">Customer Discovery</span>
+                                <span class="tech-pill-light">Jobs-to-be-Done</span>
+                                <span class="tech-pill-light">Roadmapping</span>
+                                <span class="tech-pill-light">Prioritisation</span>
+                                <span class="tech-pill-light">Agile</span>
+                                <span class="tech-pill-light">Go-to-Market</span>
+                                <span class="tech-pill-light">Business Model Canvas</span>
+                            </div>
                         </div>
-                        <div class="app-wall-row animate-marquee-fast">
-                            <!-- Row 2 -->
-                            <div class="app-squircle app-python"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 114.8c-28.1 0-50.8-22.8-50.8-50.8S35.9 13.2 64 13.2s50.8 22.8 50.8 50.8-22.8 50.8-50.8 50.8z" fill="#387EB8"/><path d="M93.3 50.8c0-10.4-12.7-18-28.4-18H52.2v12.2h12.7c8.3 0 15.7 3.3 15.7 9.8 0 6.5-7.4 9.8-15.7 9.8H48v12.2h17c-1.3 7.8-8.7 13.5-17.7 13.5-8.9 0-16.3-5.7-17.6-13.5H16.2c1.3 14.8 14.6 26 29.8 26 15.2 0 28.5-11.2 29.8-26v-1.9c5.1-1.2 8.5-5.6 8.5-10.8zM34.7 63.8c0 10.4 12.7 18 28.4 18h12.7V69.6H63.1c-8.3 0-15.7-3.3-15.7-9.8 0-6.5 7.4-9.8 15.7-9.8H80V37.8H63.8c-1.3-7.8-8.7-13.5-17.7-13.5-8.9 0-16.3 5.7-17.6-13.5h14.2c1.3-7 8-12.2 15.4-12.2 7.4 0 14.1 5.2 15.4 12.2H34.7v12.7z" fill="#FFD43B"/><path d="M49 33.6c-2.7 0-4.8 2.2-4.8 4.8s2.2 4.8 4.8 4.8 4.8-2.2 4.8-4.8-2.1-4.8-4.8-4.8zm29.2 56c-2.7 0-4.8 2.2-4.8 4.8s2.2 4.8 4.8 4.8 4.8-2.2 4.8-4.8-2.2-4.8-4.8-4.8z" fill="#fff"/></svg></div>
-                            <div class="app-squircle app-streamlit"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.4 15.01L12 13.2l-3.4 3.81-1.41-1.22 4.81-5.38 4.81 5.38-1.41 1.22zm-6.8-10.02L12 10.8l3.4-3.81 1.41 1.22-4.81 5.38-4.81-5.38 1.41-1.22z" fill="#FF4B4B"/></svg></div>
-                            <div class="app-squircle app-excel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 13.2v-2.4l-3.3-1.2V7H4v10h14.7v-2.6l3.3-1.2zM17.3 14v2H5.3V8h12v2.1l-1.4.5V12h1.4v2zM12 10.3l1.8 1.7-1.8 1.7-1.8-1.7 1.8-1.7z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-pitch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-12h2v8h-2v-8zm0-3h2v2h-2v-2z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-vscode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.1 11.2l-6.3-6.3c-.4-.4-1-.4-1.4 0L12 8.3 8.6 4.9c-.4-.4-1-.4-1.4 0L.9 11.2c-.4.4-.4 1 0 1.4l6.3 6.3c.4.4 1 .4 1.4 0L12 15.4l3.4 3.4c.4.4 1 .4 1.4 0l6.3-6.3c.4-.4.4-1 0-1.4zM11.3 12L3.1 3.8l5.6 5.6L11.3 12zm.7.7l8.2 8.2-5.6-5.6L12 12.7z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-github"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.488.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.82c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.85-2.339 4.695-4.566 4.942.359.309.678.92.678 1.856 0 1.34-.012 2.419-.012 2.746 0 .267.18.577.688.48A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill="#FFF"/></svg></div>
-                            
-                            <!-- Duplicate Row 2 -->
-                            <div class="app-squircle app-python"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 114.8c-28.1 0-50.8-22.8-50.8-50.8S35.9 13.2 64 13.2s50.8 22.8 50.8 50.8-22.8 50.8-50.8 50.8z" fill="#387EB8"/><path d="M93.3 50.8c0-10.4-12.7-18-28.4-18H52.2v12.2h12.7c8.3 0 15.7 3.3 15.7 9.8 0 6.5-7.4 9.8-15.7 9.8H48v12.2h17c-1.3 7.8-8.7 13.5-17.7 13.5-8.9 0-16.3-5.7-17.6-13.5H16.2c1.3 14.8 14.6 26 29.8 26 15.2 0 28.5-11.2 29.8-26v-1.9c5.1-1.2 8.5-5.6 8.5-10.8zM34.7 63.8c0 10.4 12.7 18 28.4 18h12.7V69.6H63.1c-8.3 0-15.7-3.3-15.7-9.8 0-6.5 7.4-9.8 15.7-9.8H80V37.8H63.8c-1.3-7.8-8.7-13.5-17.7-13.5-8.9 0-16.3 5.7-17.6-13.5h14.2c1.3-7 8-12.2 15.4-12.2 7.4 0 14.1 5.2 15.4 12.2H34.7v12.7z" fill="#FFD43B"/><path d="M49 33.6c-2.7 0-4.8 2.2-4.8 4.8s2.2 4.8 4.8 4.8 4.8-2.2 4.8-4.8-2.1-4.8-4.8-4.8zm29.2 56c-2.7 0-4.8 2.2-4.8 4.8s2.2 4.8 4.8 4.8 4.8-2.2 4.8-4.8-2.2-4.8-4.8-4.8z" fill="#fff"/></svg></div>
-                            <div class="app-squircle app-streamlit"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.4 15.01L12 13.2l-3.4 3.81-1.41-1.22 4.81-5.38 4.81 5.38-1.41 1.22zm-6.8-10.02L12 10.8l3.4-3.81 1.41 1.22-4.81 5.38-4.81-5.38 1.41-1.22z" fill="#FF4B4B"/></svg></div>
-                            <div class="app-squircle app-excel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 13.2v-2.4l-3.3-1.2V7H4v10h14.7v-2.6l3.3-1.2zM17.3 14v2H5.3V8h12v2.1l-1.4.5V12h1.4v2zM12 10.3l1.8 1.7-1.8 1.7-1.8-1.7 1.8-1.7z" fill="#FFF"/></svg></div>
-                            <div class="app-squircle app-pitch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-12h2v8h-2v-8zm0-3h2v2h-2v-2z" fill="#FFF"/></svg></div>
+                        <div class="liquid-glass-light p-6">
+                            <h3 class="text-lg font-semibold text-black mb-4">Data &amp; Process</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill-light">Python</span>
+                                <span class="tech-pill-light">SQL</span>
+                                <span class="tech-pill-light">Excel</span>
+                                <span class="tech-pill-light">IBM Cognos</span>
+                                <span class="tech-pill-light">SPSS</span>
+                                <span class="tech-pill-light">Dashboards</span>
+                                <span class="tech-pill-light">Lean Six Sigma (DMAIC)</span>
+                                <span class="tech-pill-light">Root Cause Analysis</span>
+                            </div>
+                        </div>
+                        <div class="liquid-glass-light p-6">
+                            <h3 class="text-lg font-semibold text-black mb-4">Build</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-pill-light">Flutter</span>
+                                <span class="tech-pill-light">Firebase</span>
+                                <span class="tech-pill-light">Supabase</span>
+                                <span class="tech-pill-light">PostgreSQL</span>
+                                <span class="tech-pill-light">AWS</span>
+                                <span class="tech-pill-light">Gemini / LLM APIs</span>
+                                <span class="tech-pill-light">scikit-learn</span>
+                                <span class="tech-pill-light">GitHub</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Part 5.C: Certifications -->
+                <!-- 5.C Credentials -->
                 <div class="fade-in-on-scroll">
                     <div class="text-center max-w-3xl mx-auto">
                         <span class="section-subheading gradient-heading">Credentials</span>
-                        <h2 class="section-heading-light mt-4 mb-6">Continuous Learning</h2>
+                        <h2 class="section-heading section-heading-light mt-4 mb-6">Certifications</h2>
                         <p class="text-lg text-slate-600 mb-16">
-                            From cloud-based machine learning to effective leadership, I am committed to continuous learning from world-class institutions.
+                            Where a verification link exists, it's linked.
                         </p>
                     </div>
-                    <!-- Expanded Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="liquid-glass-light p-6">
-                            <h3 class="text-xl font-semibold text-black mb-1">AWS Cloud Foundations</h3>
-                            <p class="text-slate-600 mb-4">Amazon Web Services · AWS Academy 2024</p>
-                            <span class="text-sm text-slate-400">Oct – Dec 2024</span>
+                        <div class="liquid-glass-light p-6 flex flex-col">
+                            <h3 class="text-xl font-semibold text-black mb-1">Certified Product Manager</h3>
+                            <p class="text-slate-600 mb-4 flex-grow">Phoenix Global · Product strategy, customer discovery, Agile, roadmaps, stakeholder management, GTM</p>
+                            <span class="text-sm text-slate-400">Jul 2026</span>
                         </div>
-                        <div class="liquid-glass-light p-6">
-                            <h3 class="text-xl font-semibold text-black mb-1">Intel UNNATI Data Science</h3>
-                            <p class="text-slate-600 mb-4">Intel Corporation · UNNATI Program 2024</p>
-                            <span class="text-sm text-slate-400">May – Jul 2024</span>
+                        <div class="liquid-glass-light p-6 flex flex-col">
+                            <h3 class="text-xl font-semibold text-black mb-1">Lean Six Sigma Green Belt</h3>
+                            <p class="text-slate-600 mb-4 flex-grow">KPMG India · DMAIC, process improvement, root cause analysis, waste elimination</p>
+                            <span class="text-sm text-slate-400">Jul 2026</span>
                         </div>
-                        <div class="liquid-glass-light p-6">
-                            <h3 class="text-xl font-semibold text-black mb-1">B.Tech CSE</h3>
-                            <p class="text-slate-600 mb-4">KIIT University · CGPA 9.56 (6 Sems)</p>
-                            <span class="text-sm text-slate-400">Sep 2022 – Aug 2026</span>
+                        <div class="liquid-glass-light p-6 flex flex-col">
+                            <h3 class="text-xl font-semibold text-black mb-1">IBM Data Analyst Professional Certificate</h3>
+                            <p class="text-slate-600 mb-4 flex-grow">IBM · 11 courses — Python, SQL, Excel, Cognos, data visualisation and dashboards</p>
+                            <div class="flex justify-between items-center"><span class="text-sm text-slate-400">Jul 2025</span><a href="https://coursera.org/verify/professional-cert/I0OZUY8UNF4S" target="_blank" rel="noopener noreferrer" class="verify-link">Verify &rarr;</a></div>
                         </div>
-                        <div class="liquid-glass-light p-6">
-                            <h3 class="text-xl font-semibold text-black mb-1">HSC — 12th (CBSE)</h3>
-                            <p class="text-slate-600 mb-4">ODM Public School, Bhubaneswar</p>
-                            <span class="text-sm text-slate-400">88.4% · March 2021</span>
+                        <div class="liquid-glass-light p-6 flex flex-col">
+                            <h3 class="text-xl font-semibold text-black mb-1">Strategy and Game Theory for Management</h3>
+                            <p class="text-slate-600 mb-4 flex-grow">IIM Ahmedabad (via Coursera)</p>
+                            <div class="flex justify-between items-center"><span class="text-sm text-slate-400">Mar 2025</span><a href="https://coursera.org/verify/R2D61GQVFC5T" target="_blank" rel="noopener noreferrer" class="verify-link">Verify &rarr;</a></div>
                         </div>
-                        <div class="liquid-glass-light p-6">
-                            <h3 class="text-xl font-semibold text-black mb-1">SSC — 10th (CBSE)</h3>
-                            <p class="text-slate-600 mb-4">Mothers Public School</p>
-                            <span class="text-sm text-slate-400">93.4% · March 2019</span>
+                        <div class="liquid-glass-light p-6 flex flex-col">
+                            <h3 class="text-xl font-semibold text-black mb-1">AWS Academy Cloud Architecting</h3>
+                            <p class="text-slate-600 mb-4 flex-grow">Amazon Web Services · 60 hours</p>
+                            <div class="flex justify-between items-center"><span class="text-sm text-slate-400">Dec 2024</span><a href="https://www.credly.com/go/8eIbMtTc" target="_blank" rel="noopener noreferrer" class="verify-link">Verify &rarr;</a></div>
                         </div>
-                        <div class="liquid-glass-light p-6">
-                            <h3 class="text-xl font-semibold text-black mb-1">XparkAI Research</h3>
-                            <p class="text-slate-600 mb-4">IEEE Access · Under Review</p>
-                            <a href="https://xparkai.in" target="_blank" rel="noopener noreferrer" class="font-medium text-[var(--apple-blue)] hover:text-[var(--apple-blue-hover)]">Visit xparkai.in &rarr;</a>
+                        <div class="liquid-glass-light p-6 flex flex-col">
+                            <h3 class="text-xl font-semibold text-black mb-1">AWS Academy Cloud Foundations</h3>
+                            <p class="text-slate-600 mb-4 flex-grow">Amazon Web Services · 20 hours</p>
+                            <div class="flex justify-between items-center"><span class="text-sm text-slate-400">Dec 2024</span><a href="https://www.credly.com/go/5tzBdZsW" target="_blank" rel="noopener noreferrer" class="verify-link">Verify &rarr;</a></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 6: Contact (Dark) -->
-        <section id="contact" class="section-dark py-24">
+        <!-- Section 6: Leadership & Activities (Dark) -->
+        <section id="leadership" class="section-dark py-24">
+            <div class="container mx-auto px-6">
+                <div class="fade-in-on-scroll text-center max-w-3xl mx-auto">
+                    <span class="section-subheading gradient-heading">Beyond the Classroom</span>
+                    <h2 class="section-heading section-heading-dark mt-4 mb-16">Leadership &amp; Activities</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="liquid-glass-dark fade-in-on-scroll p-8">
+                        <span class="text-xs font-semibold text-slate-500">XIM BHUBANESWAR</span>
+                        <h3 class="text-2xl font-semibold text-white mt-2 mb-1">ALCOM</h3>
+                        <p class="text-slate-400 mb-4">Shadow Member · The Alumni Committee</p>
+                        <p class="text-slate-300">Supporting alumni engagement, including designing the committee's alumni merchandise.</p>
+                    </div>
+                    <div class="liquid-glass-dark fade-in-on-scroll p-8" style="transition-delay: 0.15s;">
+                        <span class="text-xs font-semibold text-slate-500">XIM BHUBANESWAR</span>
+                        <h3 class="text-2xl font-semibold text-white mt-2 mb-1">X-Lens</h3>
+                        <p class="text-slate-400 mb-4">Shadow Member · The Photography Committee</p>
+                        <p class="text-slate-300">Covering campus events and designing the committee's merchandise.</p>
+                    </div>
+                    <div class="liquid-glass-dark fade-in-on-scroll p-8" style="transition-delay: 0.3s;">
+                        <span class="text-xs font-semibold text-slate-500">KIIT UNIVERSITY</span>
+                        <h3 class="text-2xl font-semibold text-white mt-2 mb-1">Kreative Eye</h3>
+                        <p class="text-slate-400 mb-4">Senior Photographer · The Cultural Committee</p>
+                        <p class="text-slate-300">Coordinated event coverage, led the photography team at KIITFEST 7.0, and won Second Best Photography at IIT Kharagpur's Spring Fest representing KIIT.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Photography (Dark) -->
+        <section id="photography" class="section-dark py-24 border-t border-white/5">
+            <div class="container mx-auto px-6">
+                <div class="fade-in-on-scroll text-center max-w-3xl mx-auto">
+                    <span class="section-subheading gradient-heading">Behind the Lens</span>
+                    <h2 class="section-heading section-heading-dark mt-4 mb-6">Photography</h2>
+                    <p class="text-lg text-slate-400 mb-16">
+                        Mostly concerts and live events — chasing light in the dark. Edited in Lightroom Classic.
+                    </p>
+                </div>
+                <div class="photo-masonry fade-in-on-scroll">
+                    <figure><img src="assets/photos/stage-mono.webp" alt="Singer on stage in black and white, light beams overhead" loading="lazy" width="1400" height="2100"></figure>
+                    <figure><img src="assets/photos/stage-green.webp" alt="Singer gripping a microphone stand under green stage light" loading="lazy" width="1400" height="1051"></figure>
+                    <figure><img src="assets/photos/pyro-crowd.webp" alt="Crowd with raised phones facing a stage of cold pyro and confetti" loading="lazy" width="1400" height="683"></figure>
+                    <figure><img src="assets/photos/dj-truss.webp" alt="DJ beneath a lit lighting truss at a live music event" loading="lazy" width="1400" height="1750"></figure>
+                    <figure><img src="assets/photos/bassist.webp" alt="Bassist in magenta stage light with a vocalist behind" loading="lazy" width="1400" height="1051"></figure>
+                    <figure><img src="assets/photos/lantern-avenue.webp" alt="Tree-lined avenue strung with paper lanterns at golden hour" loading="lazy" width="1400" height="933"></figure>
+                    <figure><img src="assets/photos/behind-the-lens.webp" alt="Shubham reviewing a shot on his Canon camera at night" loading="lazy" width="1400" height="1866"></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Contact (Dark) -->
+        <section id="contact" class="section-dark py-24 border-t border-white/5">
             <div class="container mx-auto px-6">
                 <div class="fade-in-on-scroll text-center max-w-2xl mx-auto">
-                    <h2 class="pro-heading text-5xl md:text-7xl mb-6">
-                        Let's Connect.
-                    </h2>
+                    <h2 class="pro-heading text-5xl md:text-7xl mb-6">Let's Connect.</h2>
+                    <!-- POSITIONING PLACEHOLDER: contact pitch -->
                     <p class="text-lg text-slate-300 mb-8">
-                        I'm actively looking for opportunities in software development, ML, and product building. If you have an interesting challenge or want to collaborate — especially around healthcare tech or AI-powered apps — I'd love to hear from you.
+                        I'm open to internships and conversations in product and strategy — especially where technology meets healthcare, AI or consumer ecosystems. If you're working on an interesting problem, I'd love to hear about it.
                     </p>
-                    
                     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-  <button id="copyEmailBtn" class="btn btn-primary inline-flex items-center justify-center">
-    <span id="copyEmailText">das.shubham2309@gmail.com</span>
-  </button>
-
-  <div class="flex justify-center items-center space-x-6">
-    <a href="www.linkedin.com/in/shubham-das-7819a3286" target="_blank" rel="noopener noreferrer"
-       class="text-slate-400 hover:text-white transition duration-300" title="LinkedIn" aria-label="LinkedIn">
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
-      </svg>
-    </a>
-
-    <a href="https://github.com/SENSEi-777" target="_blank" rel="noopener noreferrer"
-       class="text-slate-400 hover:text-white transition duration-300" title="GitHub" aria-label="GitHub">
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/>
-      </svg>
-    </a>
-  </div>
-</div>
-
+                        <button id="copyEmailBtn" class="btn btn-primary inline-flex items-center justify-center">
+                            <span id="copyEmailText">das.shubham2309@gmail.com</span>
+                        </button>
+                        <div class="flex justify-center items-center space-x-6">
+                            <a href="https://www.linkedin.com/in/shubham-das-7819a3286/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition duration-300" title="LinkedIn" aria-label="LinkedIn">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                            </a>
+                            <a href="https://github.com/SENSEi-777" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition duration-300" title="GitHub" aria-label="GitHub">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -802,9 +943,10 @@
     <!-- Footer -->
     <footer class="section-dark border-t border-slate-800">
         <div class="container mx-auto px-6 py-12 text-center text-slate-400">
-            <p>&copy; 2025 | Shubham Das</p>
+            <p>&copy; 2026 | Shubham Das</p>
         </div>
     </footer>
+
 
 
     <script>
@@ -816,9 +958,9 @@
             
             function initHeroAnimation() {
                 scene = new THREE.Scene();
-                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                camera = new THREE.PerspectiveCamera(75, heroCanvas.parentElement.clientWidth / heroCanvas.parentElement.clientHeight, 0.1, 1000);
                 renderer = new THREE.WebGLRenderer({ canvas: heroCanvas, alpha: true });
-                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setSize(heroCanvas.parentElement.clientWidth, heroCanvas.parentElement.clientHeight, false);
 
                 // Starfield
                 const particleCount = 7000;
@@ -932,10 +1074,11 @@
             }
             
             function onWindowResize() {
-                camera.aspect = window.innerWidth / window.innerHeight;
+                const host = heroCanvas.parentElement;
+                camera.aspect = host.clientWidth / host.clientHeight;
                 camera.updateProjectionMatrix();
                 if (renderer) {
-                    renderer.setSize(window.innerWidth, window.innerHeight);
+                    renderer.setSize(host.clientWidth, host.clientHeight, false);
                 }
             }
             window.addEventListener('resize', onWindowResize, false);
@@ -1048,8 +1191,8 @@
 
             const sgpaCtx = document.getElementById('sgpaChart')?.getContext('2d');
             if (sgpaCtx) {
-                const sgpaData = [9.2, 9.4, 9.5, 9.6, 9.7, 9.8];
-                const labels = ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6'];
+                const sgpaData = [9.35, 9.67, 9.55, 9.78, 9.23, 9.75, 9.80, 9.60];
+                const labels = ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8'];
 
                 // Pink-to-Purple Gradient
                 const gradient = sgpaCtx.createLinearGradient(0, 0, 0, 400);
@@ -1066,7 +1209,8 @@
                                 data: sgpaData,
                                 borderColor: gradient,
                                 borderWidth: 4,
-                                tension: 0.4,
+                                tension: 0.35,
+                                cubicInterpolationMode: 'monotone',
                                 pointBackgroundColor: '#fff',
                                 pointBorderColor: '#ec4899',
                                 pointBorderWidth: 2,
@@ -1096,7 +1240,7 @@
                                             label += ': ';
                                         }
                                         if (context.parsed.y !== null) {
-                                            label = ` SGPA: ${context.parsed.y}`;
+                                            label = ` SGPA: ${context.parsed.y.toFixed(2)}`;
                                         }
                                         return label;
                                     }
@@ -1163,28 +1307,7 @@
         
     </script>
 
-    <script>
-document.querySelectorAll(".tab-button-dark").forEach(button => {
-    button.addEventListener("click", () => {
-        
-        // Remove active class from all buttons
-        document.querySelectorAll(".tab-button-dark").forEach(btn =>
-            btn.classList.remove("active")
-        );
 
-        // Add active class to clicked button
-        button.classList.add("active");
-
-        // Hide all tab contents
-        document.querySelectorAll(".tab-content").forEach(tab =>
-            tab.classList.remove("active")
-        );
-
-        // Show the selected tab
-        document.getElementById(button.dataset.tab).classList.add("active");
-    });
-});
-</script>
 
     
 </body>
