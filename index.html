@@ -7,7 +7,6 @@
     <meta name="description" content="Shubham Das — MBA (BM) at XIM Bhubaneswar, B.Tech CSE from KIIT, co-founder of XparkAI. Product strategy, data and building.">
     <meta property="og:title" content="Shubham Das | MBA, XIM Bhubaneswar">
     <meta property="og:description" content="Engineer turned MBA. Co-founder of XparkAI. Product strategy, data and building.">
-    <meta property="og:image" content="https://shubhamdas.site/assets/headshot.webp">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -382,16 +381,6 @@
 
 
         /* --- v6 additions (same design language) --- */
-        .headshot-ring {
-            width: 168px; height: 168px; border-radius: 9999px; padding: 3px;
-            background: linear-gradient(135deg, #ec4899, #a855f7, #0071e3);
-            box-shadow: 0 20px 60px rgba(168, 85, 247, 0.25);
-            animation: slideInUp 0.8s ease-out backwards;
-        }
-        .headshot-img {
-            width: 100%; height: 100%; border-radius: 9999px; object-fit: cover;
-            object-position: 50% 20%; background: #fff; border: 3px solid #000;
-        }
         .hero-meta {
             font-size: 0.95rem; letter-spacing: 0.04em; color: var(--text-secondary-dark);
             text-transform: uppercase; font-weight: 500;
@@ -426,7 +415,6 @@
             .pro-heading { font-size: 3rem; }
             .hero-sub { font-size: 1.25rem; }
             .section-heading { font-size: 2.5rem; }
-            .headshot-ring { width: 136px; height: 136px; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -478,12 +466,9 @@
     <main class="w-full overflow-x-hidden">
 
         <!-- Section 1: Hero -->
-        <section id="home" class="section-dark relative min-h-screen flex items-center justify-center text-center py-24">
+        <section id="home" class="section-dark relative min-h-screen flex items-center justify-center text-center">
             <canvas id="hero-canvas"></canvas>
             <div class="hero-content max-w-4xl px-6">
-                <div class="headshot-ring mx-auto mb-8">
-                    <img src="assets/headshot.webp" alt="Shubham Das" width="640" height="736" class="headshot-img">
-                </div>
                 <h1 class="pro-heading mb-5">Shubham Das</h1>
                 <p class="hero-meta mb-6">
                     MBA (BM) · XIM Bhubaneswar · 2026–28
